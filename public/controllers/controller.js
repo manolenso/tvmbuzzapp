@@ -10,4 +10,8 @@ app.controller('AppCtrl', function($scope, $http) {
         console.log("I got the data I requested");
         $scope.planning = response;
     });
+    $scope.addPlanning = function() {
+        console.log($scope.planning);
+    }
 });
+refresh();
