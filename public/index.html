@@ -2,11 +2,13 @@
 <html ng-app="tvBuzz">
 <head>
   <meta charset="UTF-8">
-  <!-- Latest compiled and minified CSS   -->
+  <!-- CDN Latest compiled and minified CSS
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
     <link href="bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
@@ -72,7 +74,7 @@
 
                 </tbody>
                </table>
-        <div class="alert alert-error" id="alert" style="display: block;">
+        <div class="alert-error" id="alert" style="display: block;">
             <strong></strong>
         </div>
     </div>
@@ -80,35 +82,7 @@
 
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="controllers/controller.js"></script>
-<script>
-$(function(){
-    var startDate = new Date();
-    var endDate = new Date();
-    $('#dpReg').datepicker()
-
-            .on('changeDate', function(ev){
-                if (ev.date.valueOf() > endDate.valueOf()){
-                    $('#alert').show().find('strong').text('l\'enregistrement est après la diffusion!');
-                } else {
-                    $('#alert').hide();
-                    startDate = new Date(ev.date);
-                    $('#startDate').text($('#dpReg').data('date'));
-                }
-                $('#dpReg').datepicker('hide');
-            });
-    $('#dpDif').datepicker()
-            .on('changeDate', function(ev){
-                if (ev.date.valueOf() < startDate.valueOf()){
-                    $('#alert').show().find('strong').text('La diffusion est avant l\'enregistrement!');
-                } else {
-                    $('#alert').hide();
-                    endDate = new Date(ev.date);
-                    $('#endDate').text($('#dpDif').data('date'));
-                }
-                $('#dpDif').datepicker('hide');
-            });
-})
-</script>
+<script src="js/buzzdatepicker.js"></script>
 
 </body>
 </html>
