@@ -380,7 +380,9 @@ When the picker is visible, enter will simply hide it.  When the picker is not v
 
 ## I18N
 
-The plugin supports i18n for the month and weekday names and the `weekStart` option.  The default is English ('en'); other available translations are avilable in the `js/locales/` directory, simply include your desired locale after the plugin.  To add more languages, simply add a key to `$.fn.datepicker.dates`, before calling `.datepicker()`.  Example:
+The plugin supports i18n for the month and weekday names and the `weekStart` option.  The default is English ('en'); other available 
+translations are avilable in the `js/locales/` directory, simply include your desired locale after the plugin. 
+ To add more languages, simply add a key to `$.fn.datepicker.dates`, before calling `.datepicker()`.  Example:
 
 ```javascript
 $.fn.datepicker.dates['en'] = {
