@@ -27,7 +27,6 @@
         $scope.remove = function(id) {
             console.log(id);
             $http.delete('/planninglist/' + id).success(function(response) {
-                console.log(response);
                 refresh();
             });
         };
@@ -36,6 +35,7 @@
             console.log(id);
             $http.get('/planninglist/' + id).success(function(response) {
                 $scope.planning = response;
+                console.log("I Get the DATA for Edition");
             });
         };
 
@@ -51,3 +51,4 @@
         }
     }]);
 })();
+
